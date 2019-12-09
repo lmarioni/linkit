@@ -1,0 +1,113 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css"
+  integrity="sha256-ujE/ZUB6CMZmyJSgQjXGCF4sRRneOimQplBVLu8OU5w="
+  crossorigin="anonymous"
+/>
+<title>CRM - Axon Training</title>
+<link
+href="https://axont-contenidos.s3.us-east-2.amazonaws.com/imagen/5d96907ca0da5.png"
+rel="shortcut icon"
+type="image/x-icon"
+/>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="https://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+
+<script src="https://kit.fontawesome.com/5023b3b163.js" crossorigin="anonymous"></script>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img
+        src="https://axont-contenidos.s3.us-east-2.amazonaws.com/imagen/5d96904a4c064.png"
+        width="112"
+        height="28"
+      />
+    </a>
+
+    <a
+      role="button"
+      class="navbar-burger burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarBasicExample"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/">
+        Home
+      </a>
+      <a class="navbar-item" href="/cargar-dato">
+        New Lead
+      </a>
+      <% if(locals.role == 'admin'){ %>
+        <a class="navbar-item" href="/dashboard">
+          Dashboard
+        </a>
+        <% } %>
+     
+
+     <!-- <a class="navbar-item">
+        Documentation
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            About
+          </a>
+          <a class="navbar-item">
+            Jobs
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
+          <hr class="navbar-divider" />
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        </div>
+      </div>
+      -->
+    </div>
+ 
+
+    <div class="navbar-end">
+
+          <div class="navbar-item">
+            <form action="/" method="GET" style="margin: 0px;">
+              <div class="field has-addons">
+                  <div class="control">
+                    <input class="input" name="q" type="text" placeholder="Buscar Lead">
+                  </div>
+                  <div class="control">
+                    <input type="submit" class="button is-info" value="Buscar" />
+                  </div>
+                </div>
+            </form>
+          </div>
+
+        <div class="navbar-item">
+          Hola <span style="margin-left:3px;" class="has-text-link"><%= locals.login %> <i class="far fa-smile-beam" style="color:black;"></i>.</span>
+        </div>
+      <div class="navbar-item">
+        <div class="buttons">
+          
+          <a href="/logout" class="button is-light">
+            Log out
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
