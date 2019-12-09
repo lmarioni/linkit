@@ -63,7 +63,7 @@ router.get("/", async function(req, res, next) {
   // sql = `SELECT * FROM usuarios where id_usuario = 1`;
   // var usuario = await conexion.makeQuery(sql);
 
-    res.send({'hola': 'xD'})
+    res.render('pages/home',{'hola': 'xD'})
 });
 
 
