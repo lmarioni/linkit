@@ -60,10 +60,31 @@ async function isLoggedIn(req, res, next) {
 }
 
 router.get("/", async function(req, res, next) {
+//web home
+    res.render('pages/home',{'hola': 'xD'})
+});
+
+router.get("/dashboard", async function(req, res, next) {
   // sql = `SELECT * FROM usuarios where id_usuario = 1`;
   // var usuario = await conexion.makeQuery(sql);
 
-    res.render('pages/home',{'hola': 'xD'})
+    res.render('pages/dashboard',{'hola': 'xD'})
+});
+
+router.get("/clean", async function(req, res, next) {
+
+  //template basico para hacer una pagina nueva en el dash
+  // sql = `SELECT * FROM usuarios where id_usuario = 1`;
+  // var usuario = await conexion.makeQuery(sql);
+
+    res.render('pages/clean',{'hola': 'xD'})
+});
+
+router.get("/profile", async function(req, res, next) {
+  // sql = `SELECT * FROM usuarios where id_usuario = 1`;
+  // var usuario = await conexion.makeQuery(sql);
+
+    res.render('pages/profile',{'hola': 'xD'})
 });
 
 

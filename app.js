@@ -1,6 +1,8 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+const expressLayouts = require('express-ejs-layouts');
+
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session')
@@ -16,6 +18,8 @@ app.use(cookieParser());
 app.set('views', path.join(__dirname, 'views'));
 
 app.set('view engine', 'ejs');
+app.use(expressLayouts);
+
 app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 9999999999 }}))
 
 // app.use( session( {

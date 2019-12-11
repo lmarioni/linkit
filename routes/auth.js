@@ -4,11 +4,19 @@ const fetch = require("isomorphic-fetch");
 
 /* GET home page. */
 router.get("/login", async function(req, res, next) {
-  if (req.cookies["token"]) {
-    res.redirect("/");
-  }
+  // if (req.cookies["token"]) {
+  //   res.redirect("/");
+  // }
 
   res.render("pages/auth/login");
+});
+
+router.get("/register", async function(req, res, next) {
+  // if (req.cookies["token"]) {
+  //   res.redirect("/");
+  // }
+
+  res.render("pages/auth/register");
 });
 
 router.get("/logout", function(req, res, next) {
