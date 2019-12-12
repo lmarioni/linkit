@@ -5,7 +5,7 @@
     <!-- Header -->
     <% include ../../partials/auth/header %>
     <!-- Page content -->
-    <div class="container mt--8 pb-5">
+    <div class="container mt--9 pb-5">
       <!-- Table -->
       <div class="row justify-content-center">
         <div class="col-lg-6 col-md-8">
@@ -25,15 +25,24 @@
             </div>
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
+                  <h1><% if(status === 'error'){ %>  
+                       
+                     <div class="alert alert-danger" role="alert">
+                        <strong>Error!</strong> <%= message %> 
+                    </div>
+                    
+                      <% } %> 
+                    </h1>
+                  
                 <small>Or sign up with credentials</small>
               </div>
-              <form role="form" action="register" method="POST">
+              <form role="form" action="/register" method="POST">
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                     </div>
-                    <input class="form-control" name="name" placeholder="Name" type="text" required>
+                    <input class="form-control" name="username" placeholder="Username" type="text" required>
                   </div>
                   <% if (locals.messages && messages.errors && messages.errors.name) { %>
                     <strong class="invalid-feedback" style="display: block"><%= messages.errors.name %></strong>
@@ -44,7 +53,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input class="form-control" name="username" placeholder="Email" type="email" required>
+                    <input class="form-control" name="email" placeholder="Email" type="email" required>
                   </div>
                   <% if (locals.messages && messages.errors && messages.errors.username) { %>
                     <strong class="invalid-feedback" style="display: block"><%= messages.errors.username %></strong>
@@ -55,23 +64,26 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input class="form-control" name="password" placeholder="Password" type="password" required>
+                    <input class="form-control" name="contrasena" placeholder="Password" type="password" required>
                   </div>
                   <% if (locals.messages && messages.errors && messages.errors.password) { %>
                     <strong class="invalid-feedback" style="display: block"><%= messages.errors.password %></strong>
                   <% } %>
                 </div>
-                <div class="text-muted font-italic"><small>password strength: <span class="text-success font-weight-700">strong</span></small></div>
-                <div class="row my-4">
-                  <div class="col-12">
-                    <div class="custom-control custom-control-alternative custom-checkbox">
-                      <input class="custom-control-input" id="customCheckRegister" type="checkbox" required>
-                      <label class="custom-control-label" for="customCheckRegister">
-                        <span class="text-muted">I agree with the <a href="#!">Privacy Policy</a></span>
-                      </label>
+                <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                      </div>
+                      <input class="form-control" name="repcontrasena" placeholder="Password" type="password" required>
                     </div>
+                    <% if (locals.messages && messages.errors && messages.errors.password) { %>
+                      <strong class="invalid-feedback" style="display: block"><%= messages.errors.password %></strong>
+                    <% } %>
                   </div>
-                </div>
+                  
+                <div class="text-muted font-italic"><small>password strength: <span class="text-success font-weight-700">strong</span></small></div>
+                
                 <% if (locals.messages && locals.messages.databaseError) { %>
                   <strong class="invalid-feedback" style="display: block"><%= messages.databaseError %></strong>
                 <% } %>

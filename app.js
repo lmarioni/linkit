@@ -7,6 +7,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session')
 
+require('dotenv').config();
+
 var indexRouter = require('./routes/index');
 var authRouter = require('./routes/auth');
 
@@ -37,6 +39,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //   res.locals.login = req.session.login;
 //   next();
 // });
+
+
 
 app.use('/', indexRouter);
 app.use('/', authRouter);

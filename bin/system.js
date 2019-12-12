@@ -1,4 +1,5 @@
 var request = require("request");
+var jwt = require("jwt-simple");
 
 const EnviarEmail = async function(enviara, asuntoEmail, textoEmail) {
     var request = require("request");
@@ -38,6 +39,20 @@ const EnviarEmail = async function(enviara, asuntoEmail, textoEmail) {
     });
 };
 
+const createToken = (userId) => {
+    let payload = {
+        userId: userId
+    }
+    return jwt.encode(payload,process.env.TOKEN_KEY);
+};
+
+const decodeToken = (token) => {
+   return jwt.decode(token,process.env.TOKEN_KEY)
+
+};
+
   module.exports = {
-    'EnviarEmail': EnviarEmail
+    'EnviarEmail': EnviarEmail,
+    'createToken': createToken,
+    'decodeToken': decodeToken
   };

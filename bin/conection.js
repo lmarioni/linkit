@@ -1,13 +1,13 @@
 var mysql = require('mysql');
 
 var conexion = mysql.createConnection({
-    host : '',
-    database : '',
-    user : '',
+    host : 'localhost',
+    database : 'link',
+    user : 'root',
     password : '',
   });
   
-  conexion.connect(function(err) {
+  conexion.connect(function(err) {    
     if (err) {
         console.error('Error de conexion: ' + err.stack);
         return;
