@@ -53,6 +53,18 @@ router.get("/",async function(req, res, next) {
 //web home
     res.render('pages/home',{'hola': 'xD'})
 });
+router.get("/prueba",async function(req, res, next) {
+  //web home
+      res.render('pages/prueba',{'hola': 'xD'})
+  });
+
+router.get("/admin",async function(req, res, next) {
+  sql = `SELECT * FROM users where id = 4`;
+  var usuario = await conexion.makeQuery(sql);
+console.log(usuario);
+
+    res.render('pages/admin',{'hola': 'xD'})
+});
 
 router.get("/dashboard", isLoggedIn,async function(req, res, next) {
   // sql = `SELECT * FROM usuarios where id_usuario = 1`;

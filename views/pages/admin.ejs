@@ -1,0 +1,75 @@
+<!-- Sidenav -->
+<% include ../partials/sidebar %>
+<!-- Main content -->
+<div class="main-content">
+  <!-- Top navbar -->
+  <% include ../partials/navbar %>
+  <!-- Header -->
+  <% include ../partials/header %>
+  <!-- Page content -->
+  <!-- <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+
+  <div class="container-fluid">
+        <div class="row" id="div-dashboard"></div>
+        
+      
+
+        
+      
+        
+<style>
+
+        #phone {
+            position: relative;
+            width: 100%;
+            height: auto;
+          }
+          .img-cel {
+            position: relative;
+            width: 100%;
+          }
+          #screen {
+            position: absolute;
+            top: 18%;
+            left: 18%;
+            width: 65%;
+            height: 63%;
+            background: linear-gradient(0deg,#fd8f67,#d463a3);;
+            padding: 15px;
+          }
+
+ /*para el listado */
+ .sortable { 
+}
+
+.sorteable-item {
+    margin-bottom: 3px;
+    overflow: hidden;
+}
+
+.sorteable-body {
+    
+}
+.sorteable-zone{
+    cursor: move;
+    background: #dddddd;
+    font-size: 2rem;
+}
+.sortable .up, .sortable .down { float: left; }
+.sortable .up:before { content: "\f077"; }
+.sortable .down:before { content: "\f078"; }
+</style>
+
+
+    <!-- Footer -->
+    <% include ../partials/footer %>
+    <script type="text/babel" src="/js/admin.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </div>
+</div>
+<!-- Include scripts -->
+<% include ../partials/scripts %>
+

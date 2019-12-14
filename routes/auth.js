@@ -85,7 +85,7 @@ router.get('/register', async function(req, res, next){
  
   }
    
- res.redirect('/dashboard');
+ res.redirect('/admin');
  })
 
 /* GET home page. */
@@ -136,7 +136,7 @@ router.post("/login", async function(req, res, next) {
      }
 
      if(status=== 'success'){
-       res.redirect('/dashboard')
+       res.redirect('/admin')
      }
 
 

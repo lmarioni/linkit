@@ -1,13 +1,48 @@
-<h1>reg</h1>
 
-<form action="/log" method="POST">
-    <p>email</p>
-    <input type="email" name="email" />
-    <p>username</p>
-    <input type="text" name="username" />
-    <p>pass</p>
-    <input type="text" name="contrasena" />
-    <p>repetir pass</p>
-    <input type="text" name="repcontrasena" />
-    <input type="submit" value="enviar">
-</form>
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container">
+    <div class="row">
+        <div class="col-md-11">
+        
+                <div id="div-lista"></div>
+                <script type="text/babel" src="/js/lista.js"></script>
+
+                
+              
+
+      
+      
+  
+
+      <style>
+            @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+            .sortable { 
+            }
+            
+            .sorteable-item {
+                margin-bottom: 3px;
+                overflow: hidden;
+            }
+
+            .sorteable-body {
+                
+            }
+            .sorteable-zone{
+                cursor: move;
+                background: #dddddd;
+                font-size: 2rem;
+            }
+            .sortable .up, .sortable .down { float: left; }
+            .sortable .up:before { content: "\f077"; }
+            .sortable .down:before { content: "\f078"; }
+      </style>
+      
+        </div>
+    </div>
+</div>

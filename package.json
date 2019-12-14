@@ -23,6 +23,7 @@
     "morgan": "~1.9.1",
     "mysql": "^2.17.1",
     "nodemon": "^1.19.4",
+    "react-sortable-hoc": "^1.10.1",
     "request": "^2.88.0",
     "uuid": "^3.3.3"
   }
